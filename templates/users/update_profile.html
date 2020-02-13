@@ -14,11 +14,11 @@
     <div class="row justify-content-md-center">
         <div class="col-6 p-4" id="profile-box">
 
-            <form action="{% url 'feed' %}" method="POST" enctype="multipart/form-data">
+            <form action="{% url 'update_profile' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 {% if form.errors %}
-                    <p>{{ form.errors }}</p>
+                    <p class="alert alert-danger">{{ form.errors }}</p>
                 {% endif %}
 
                 <div class="media">
@@ -55,7 +55,7 @@
                     />
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block mt-5">Update!</button>
+                <button type="submit" class="btn btn-primary btn-block mt-5">Update profile !</button>
             </form>
         </div>
     </div>
