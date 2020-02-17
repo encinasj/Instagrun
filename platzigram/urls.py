@@ -23,7 +23,9 @@ from users import views as users_views
 
 
 urlpatterns = [
-    path('posts/', posts_views.list_post, name='feed'),
+    path('', posts_views.list_post, name='feed'),
+    path('post/new/', posts_views.create_post, name='create_post'),
+
     path('users/login/', users_views.login_views, name='login'),
     path('users/logout/', users_views.logout_views, name='logout'),
     path('users/signup/', users_views.signup, name='signup'),
