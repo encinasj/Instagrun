@@ -13,30 +13,7 @@
     <form action="{% url 'signup' %}" method="POST">
         {% csrf_token %}
 
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Username" name="username" autocomplete="off" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="password" placeholder="Password" name="passwd" autocomplete="off" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="password" placeholder="Password confirmation" name="passwd_confirmation" autocomplete="off" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="First name" name="first_name" autocomplete="off" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Last name" name="last_name" autocomplete="off" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="email" placeholder="Email address" name="email" autocomplete="off" required="true" />
-        </div>
-
+        {{ form.as_p }}
         <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
     </form>
     <p class="mt-4"><a href="{% url 'login' %}">Cancel</a></p>
