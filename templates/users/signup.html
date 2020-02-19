@@ -13,9 +13,32 @@
     <form action="{% url 'signup' %}" method="POST">
         {% csrf_token %}
 
-        {{ form.as_p }}
+        <div class="form-group">
+            {{ form.username }}
+        </div>
+
+        <div class="form-group">
+            {{ form.password }}
+        </div>
+
+        <div class="form-group">
+            {{ form.password_confirmation }}
+        </div>
+
+        <div class="form-group">
+            {{ form.first_name }}
+        </div>
+
+        <div class="form-group">
+            {{ form.last_name }}
+        </div>
+
+        <div class="form-group">
+            {{ form.email}}
+        </div>
+
         <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
     </form>
-    <p class="mt-4"><a href="{% url 'login' %}">Cancel</a></p>
-
+    <br>
+    <p>if you have an account click <a href="{% url 'login' %}">Here!</a></p>
 {% endblock container %}

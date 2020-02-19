@@ -6,13 +6,43 @@ from users.models import Profile
 
 class SignupForm(forms.Form):
     #sginup Forms
-    username = forms.CharField(min_length=4, max_length=20,required=True)
-    password = forms.CharField(max_length=70, required=True, widget=forms.PasswordInput())
-    password_confirmation = forms.CharField(max_length=70, required=True, widget=forms.PasswordInput())
+    username = forms.CharField(min_length=4, max_length=20,required=True, 
+                                widget=forms.TextInput(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'Username',
+                                    'autocomplete': 'off',
+                                    }))
+    password = forms.CharField(max_length=70, required=True, 
+                                widget=forms.PasswordInput(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'Password',
+                                    'autocomplete': 'off',
+                                    }))
+    password_confirmation = forms.CharField(max_length=70, required=True, 
+                                widget=forms.PasswordInput(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'Password confirmation',
+                                    'autocomplete': 'off',
+                                    }))
 
-    first_name = forms.CharField(min_length=2, max_length=50, required=True)
-    last_name = forms.CharField(min_length=2, max_length=50, required=True)
-    email = forms.EmailField(min_length=6, max_length=30, required=False, widget=forms.EmailInput())
+    first_name = forms.CharField(min_length=2, max_length=50, required=True,
+                                 widget=forms.TextInput(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'Fist Name',
+                                    'autocomplete': 'off',
+                                    }))
+    last_name = forms.CharField(min_length=2, max_length=50, required=True,  
+                                widget=forms.TextInput(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'Last Name',
+                                    'autocomplete': 'off',
+                                    }))
+    email = forms.EmailField(min_length=6, max_length=30, required=False, 
+                                widget=forms.EmailInput(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'Email',
+                                    'autocomplete': 'off',
+                                    }))
 
     def clean_username(self):
         """Username must be unique."""
