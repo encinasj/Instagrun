@@ -12,7 +12,7 @@ from posts.models import Post
 #Form
 from users.forms import ProfileForm, SignupForm
 
-def login_views(request):
+def login_views(request, *args, **kwargs):
     #Login views
     if request.method == 'POST':
         username = request.POST['username']

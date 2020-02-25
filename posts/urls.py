@@ -10,4 +10,8 @@ urlpatterns = [
         route='post/new/',
         view= views.create_post,
         name='create'),
+    path(
+        route='posts/<int:pk>/',
+        view=views.PostsDetailView.as_view(),
+        name='detail'),
 ]
