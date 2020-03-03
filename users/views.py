@@ -5,6 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render,redirect
 from django.urls import reverse
 from django.views.generic import DeleteView
+from django.http import JsonResponse
+from django.core import serializers
 #Models
 from django.contrib.auth.models import User
 from users.models import Profile
@@ -93,3 +95,6 @@ def logout_views(request):
     #loout_views
     logout(request)
     return redirect('users:login')
+
+def SearchResultsView(request):
+    pass

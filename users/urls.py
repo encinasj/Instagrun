@@ -25,4 +25,8 @@ urlpatterns = [
         route='<str:username>/',
         view=views.UserDetailView.as_view(),
         name='detail'),
+    path(
+        route='search/', 
+        view= views.SearchResultsView, 
+        name='search_results'),
 ]

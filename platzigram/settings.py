@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'platzigram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT':'',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'instagrun',
+        'USER': 'joseencinas',
+        'PASSWORD': 'as243h38asr1',
+        'HOST': '127.0.0.1',
+        'PORT':'5432',
     }
 }
 
@@ -137,7 +137,7 @@ STATICFILES_FINDERS = [
 ]
 
 #eliminar la ruta de cuando vallamos a subir cambios a git
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+#MEDIA_URL = '/media/'
 
 LOGIN_URL= '/users/login/'
